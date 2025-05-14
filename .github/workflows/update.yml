@@ -24,7 +24,7 @@ jobs:
         run: |
           git config user.name "Abhinav-Gyawali"
           git config user.email "publicgyawali@gmail.com"
-          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}
+          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/blockchain-voting
           git add daily.txt
           git commit -m "Daily update $(date -u)" || echo "No changes to commit"
           git push
