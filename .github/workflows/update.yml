@@ -20,10 +20,11 @@ jobs:
       - name: Run daily update script
         run: python update-daily.py
 
-      - name: Commit changes
+      - name: Push changes
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Abhinav-Gyawali"
+          git config user.email "publicgyawali@gmail.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}
           git add daily.txt
           git commit -m "Daily update $(date -u)" || echo "No changes to commit"
           git push
